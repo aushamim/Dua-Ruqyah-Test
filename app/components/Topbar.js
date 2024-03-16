@@ -3,7 +3,7 @@ import React from "react";
 
 const Topbar = () => {
   return (
-    <div className="grid grid-cols-[1fr_17%] gap-7 mb-7">
+    <div className="grid grid-cols-[1fr_17%] gap-12 mb-5">
       <div className="grid grid-cols-2 items-center">
         <div>
           <h1 className="text-2xl">Duas Page</h1>

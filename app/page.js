@@ -10,7 +10,7 @@ import Category from "./components/Category";
 export default function Home() {
   return (
     <div className="overflow-hidden">
-      <div className="p-10 min-h-screen grid grid-cols-[6%_1fr] gap-7">
+      <div className="p-5 2xl:p-10 min-h-screen grid grid-cols-[6%_1fr] gap-7">
         <nav>
           <Nav />
         </nav>
@@ -52,13 +52,13 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="h-[57vh] 2xl:h-[69vh] overflow-y-scroll scrollbar-light">
+                <div className="h-[57vh] 2xl:h-[71vh] overflow-y-scroll scrollbar-light">
                   <Category />
                   <Category />
                 </div>
               </div>
 
-              <div className="h-[76vh] 2xl:h-[84vh] col-span-3 overflow-y-scroll rounded-xl pr-1">
+              <div className="h-[85vh] col-span-3 overflow-y-scroll rounded-xl pr-1">
                 <div className="bg-white px-6 py-4 mb-5 rounded-xl font-medium">
                   <span className="text-[#1FA45B] font-semibold">
                     Section:{" "}
