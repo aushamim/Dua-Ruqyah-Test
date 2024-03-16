@@ -1,13 +1,18 @@
-import { Bounce, ToastContainer, toast } from "react-toastify";
+"use client";
+
+import { Bounce, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Nav from "./components/Nav";
 import Topbar from "./components/Topbar";
 import Sidebar from "./components/Sidebar";
-import Image from "next/image";
 import Dua from "./components/Dua";
-import Category from "./components/Category";
+import SubCategory from "./components/SubCategory";
+import { useState } from "react";
+import Image from "next/image";
 
 export default function Home() {
+  const [duaCatView, setDuaCatView] = useState("0");
+
   return (
     <div className="overflow-hidden">
       <div className="p-5 2xl:p-10 min-h-screen grid grid-cols-[6%_1fr] gap-7">
@@ -53,8 +58,46 @@ export default function Home() {
                 </div>
 
                 <div className="h-[57vh] 2xl:h-[71vh] overflow-y-scroll scrollbar-light">
-                  <Category />
-                  <Category />
+                  {/* Category Start */}
+                  <div className="ml-3 mr-2">
+                    <button
+                      className={
+                        duaCatView === "0"
+                          ? "bg-[#e8f0f5] p-3 rounded-xl grid grid-cols-5 gap-2 items-center"
+                          : "bg-white p-3 rounded-xl grid grid-cols-5 gap-2 items-center"
+                      }
+                      onClick={() => {
+                        setDuaCatView("0");
+                      }}
+                    >
+                      <div className="bg-[#f7f8fa] flex items-center justify-center p-2 rounded-lg">
+                        <Image
+                          src="/assets/icons/duar_gurutto.svg"
+                          alt="Logo"
+                          width={100}
+                          height={100}
+                          className="w-9"
+                        />
+                      </div>
+                      <div className="col-span-3">
+                        <p className="font-medium">Dua's Importance</p>
+                        <p className="text-xs mt-1 text-gray-500">
+                          Subcategory: 7
+                        </p>
+                      </div>
+                      <div className="h-full border-l-2 hidden 2xl:block">
+                        <p className="font-medium text-center">21</p>
+                        <p className="text-xs  text-center mt-1 text-gray-500">
+                          Duas
+                        </p>
+                      </div>
+                    </button>
+
+                    <SubCategory
+                      openState={duaCatView === "0" ? true : false}
+                    />
+                  </div>
+                  {/* Category End */}
                 </div>
               </div>
 
