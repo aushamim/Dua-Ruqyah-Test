@@ -5,6 +5,7 @@ import Topbar from "./components/Topbar";
 import Sidebar from "./components/Sidebar";
 import Image from "next/image";
 import Dua from "./components/Dua";
+import Category from "./components/Category";
 
 export default function Home() {
   return (
@@ -50,9 +51,14 @@ export default function Home() {
                     />
                   </div>
                 </div>
+
+                <div className="h-[57vh] 2xl:h-[69vh] overflow-y-scroll scrollbar-light">
+                  <Category />
+                  <Category />
+                </div>
               </div>
 
-              <div className="h-[76vh] 2xl:h-[84vh] col-span-3 overflow-y-scroll scrollbar-thin rounded-xl">
+              <div className="h-[76vh] 2xl:h-[84vh] col-span-3 overflow-y-scroll rounded-xl pr-1">
                 <div className="bg-white px-6 py-4 mb-5 rounded-xl font-medium">
                   <span className="text-[#1FA45B] font-semibold">
                     Section:{" "}
