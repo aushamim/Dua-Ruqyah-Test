@@ -7,7 +7,12 @@ const Nav = () => {
     <div className="bg-white h-full rounded-3xl py-6 grid grid-rows-7">
       <div className="flex justify-center">
         <Link className="w-12 2xl:w-16" href="/">
-          <Image src="/images/logo.png" alt="Logo" width={512} height={512} />
+          <Image
+            src="/assets/images/logo.png"
+            alt="Logo"
+            width={100}
+            height={100}
+          />
         </Link>
       </div>
       <div className="row-span-5 flex justify-center items-center">
@@ -17,7 +22,7 @@ const Nav = () => {
             href="/"
           >
             <Image
-              src="/icons/home.svg"
+              src="/assets/icons/home.svg"
               alt="Logo"
               width={100}
               height={100}
@@ -29,7 +34,7 @@ const Nav = () => {
             href="/"
           >
             <Image
-              src="/icons/menu.svg"
+              src="/assets/icons/menu.svg"
               alt="Logo"
               width={100}
               height={100}
@@ -41,7 +46,7 @@ const Nav = () => {
             href="/"
           >
             <Image
-              src="/icons/memorize.svg"
+              src="/assets/icons/memorize.svg"
               alt="Logo"
               width={20}
               height={20}
@@ -53,7 +58,7 @@ const Nav = () => {
             href="/"
           >
             <Image
-              src="/icons/keep-minus.svg"
+              src="/assets/icons/keep-minus.svg"
               alt="Logo"
               width={20}
               height={20}
@@ -65,7 +70,7 @@ const Nav = () => {
             href="/"
           >
             <Image
-              src="/icons/ruqyah.svg"
+              src="/assets/icons/ruqyah.svg"
               alt="Logo"
               width={100}
               height={100}
@@ -77,7 +82,7 @@ const Nav = () => {
             href="/"
           >
             <Image
-              src="/icons/dua-info.svg"
+              src="/assets/icons/dua-info.svg"
               alt="Logo"
               width={20}
               height={20}
@@ -89,7 +94,7 @@ const Nav = () => {
             href="/"
           >
             <Image
-              src="/icons/books.svg"
+              src="/assets/icons/books.svg"
               alt="Logo"
               width={100}
               height={100}
@@ -104,7 +109,7 @@ const Nav = () => {
           className="bg-[#1FA45B] inline-block p-3 2xl:p-4 rounded-xl"
         >
           <Image
-            src="/icons/bxs_donate-heart.svg"
+            src="/assets/icons/bxs_donate-heart.svg"
             alt="Logo"
             width={100}
             height={100}

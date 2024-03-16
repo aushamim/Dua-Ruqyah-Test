@@ -3,7 +3,7 @@ import React from "react";
 
 const Topbar = () => {
   return (
-    <div className="grid grid-cols-[1fr_17%] gap-8 mb-8">
+    <div className="grid grid-cols-[1fr_17%] gap-7 mb-7">
       <div className="grid grid-cols-2 items-center">
         <div>
           <h1 className="text-2xl">Duas Page</h1>
@@ -42,7 +42,7 @@ const Topbar = () => {
         <div className="dropdown dropdown-bottom dropdown-end">
           <div tabIndex={0} role="button" className="flex items-center gap-2">
             <Image
-              src="/images/avatar.png"
+              src="/assets/images/avatar.png"
               alt="Avatar"
               width={45}
               height={45}
@@ -67,7 +67,7 @@ const Topbar = () => {
             <li>
               <a>
                 <Image
-                  src="/icons/support.svg"
+                  src="/assets/icons/support.svg"
                   alt=""
                   width={45}
                   height={45}
@@ -79,7 +79,7 @@ const Topbar = () => {
             <li>
               <a>
                 <Image
-                  src="/icons/download.svg"
+                  src="/assets/icons/download.svg"
                   alt=""
                   width={45}
                   height={45}
@@ -91,7 +91,7 @@ const Topbar = () => {
             <li>
               <a>
                 <Image
-                  src="/icons/privacy.svg"
+                  src="/assets/icons/privacy.svg"
                   alt=""
                   width={45}
                   height={45}
@@ -103,7 +103,7 @@ const Topbar = () => {
             <li>
               <a>
                 <Image
-                  src="/icons/credit.svg"
+                  src="/assets/icons/credit.svg"
                   alt=""
                   width={45}
                   height={45}
@@ -115,7 +115,7 @@ const Topbar = () => {
             <li>
               <a>
                 <Image
-                  src="/icons/about.svg"
+                  src="/assets/icons/about.svg"
                   alt=""
                   width={45}
                   height={45}
@@ -127,7 +127,7 @@ const Topbar = () => {
             <li>
               <a>
                 <Image
-                  src="/icons/copyright.svg"
+                  src="/assets/icons/copyright.svg"
                   alt=""
                   width={45}
                   height={45}
@@ -139,7 +139,7 @@ const Topbar = () => {
             <li>
               <a>
                 <Image
-                  src="/icons/projects.svg"
+                  src="/assets/icons/projects.svg"
                   alt=""
                   width={45}
                   height={45}
@@ -157,7 +157,7 @@ const Topbar = () => {
             className="drawer-button cursor-pointer"
           >
             <Image
-              src="/icons/settings.svg"
+              src="/assets/icons/settings.svg"
               alt=""
               width={45}
               height={45}

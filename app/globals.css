@@ -2,10 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  scrollbar-color: auto;
+  scrollbar-width: auto;
+}
+
 body {
   color: black;
   background-color: #ebeef2;
   min-height: 100vh;
+}
+
+.scrollbar-thin {
+  scrollbar-width: thin;
+  padding-right: 5px;
+}
+
+.font-arabic {
+  font-family: me_quran;
+  word-spacing: 8px;
+}
+
+@font-face {
+  font-family: me_quran;
+  src: url("/assets/fonts/me_quran Regular.ttf");
 }
 
 @layer utilities {

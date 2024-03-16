@@ -12,7 +12,7 @@ const Sidebar = () => {
   const [arabicFont, setArabicFont] = useState("KFGQ");
 
   return (
-    <div className="drawer drawer-end 2xl:h-[83.5vh] 2xl:drawer-open">
+    <div className="drawer drawer-end 2xl:h-[84vh] 2xl:drawer-open">
       <input id="drawer-sidebar" type="checkbox" className="drawer-toggle" />
       <div className="drawer-side">
         <label
@@ -20,7 +20,7 @@ const Sidebar = () => {
           aria-label="close sidebar"
           className="drawer-overlay"
         ></label>
-        <div className="menu p-4 w-72 min-h-full 2xl:min-h-[83.5vh] bg-white rounded-l-3xl 2xl:rounded-3xl text-base-content">
+        <div className="menu p-4 w-80 min-h-full 2xl:min-h-[84vh] bg-white rounded-l-3xl 2xl:rounded-3xl text-base-content">
           <h1 className="text-xl text-center pt-7 pb-10">Settings</h1>
 
           <div className="mb-5">
@@ -263,7 +263,7 @@ const Sidebar = () => {
                     <p className="col-span-2">{arabicScript}</p>
                     <div className="flex justify-end">
                       <Image
-                        src="/icons/dropdown.svg"
+                        src="/assets/icons/dropdown.svg"
                         alt=""
                         width={45}
                         height={45}
@@ -308,7 +308,7 @@ const Sidebar = () => {
                     <p className="col-span-2">{arabicFont}</p>
                     <div className="flex justify-end">
                       <Image
-                        src="/icons/dropdown.svg"
+                        src="/assets/icons/dropdown.svg"
                         alt=""
                         width={45}
                         height={45}
