@@ -124,7 +124,10 @@ export default function Home() {
               </div>
 
               {/* Body Start */}
-              <div className="h-[85vh] col-span-3 overflow-y-scroll rounded-xl pr-1">
+              <div
+                id="dua-body"
+                className="h-[85vh] col-span-3 overflow-y-scroll rounded-xl pr-1 scroll-smooth"
+              >
                 {duaAll?.map((x) => (
                   <div key={x.id}>
                     <div

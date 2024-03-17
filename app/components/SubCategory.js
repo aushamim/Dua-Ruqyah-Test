@@ -35,6 +35,16 @@ const SubCategory = ({ openState, catId }) => {
                 onClick={() => {
                   setSubCatView(x.id);
                   setSubSubCatView("-");
+
+                  const scrollDiv = document.getElementById(
+                    `section-${x.cat_id}-${x.subcat_id}`
+                  );
+                  const container = document.getElementById("dua-body");
+                  if (window.screen.width > 1400) {
+                    container.scrollTop = scrollDiv.offsetTop - 108;
+                  } else {
+                    container.scrollTop = scrollDiv.offsetTop - 88;
+                  }
                 }}
               >
                 <p className="text-[#1FA45B] text-xl absolute top-1/2 -translate-y-1/2 -left-1.5">
@@ -66,11 +76,16 @@ const SubCategory = ({ openState, catId }) => {
                         setSubSubCatView(
                           `${y.cat_id}-${y.subcat_id}-${y.dua_id}`
                         );
-                        document
-                          .getElementById(
-                            `dua-${y.cat_id}-${y.subcat_id}-${y.dua_id}`
-                          )
-                          ?.scrollIntoView({ behavior: "smooth" });
+
+                        const scrollDiv = document.getElementById(
+                          `dua-${y.cat_id}-${y.subcat_id}-${y.dua_id}`
+                        );
+                        const container = document.getElementById("dua-body");
+                        if (window.screen.width > 1400) {
+                          container.scrollTop = scrollDiv.offsetTop - 108;
+                        } else {
+                          container.scrollTop = scrollDiv.offsetTop - 88;
+                        }
                       }}
                     >
                       <Image
