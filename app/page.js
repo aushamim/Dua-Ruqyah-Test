@@ -145,7 +145,10 @@ export default function Home() {
                         key={dua.dua_id}
                         id={`dua-${duaCatView}-${x.subcat_id}-${dua.dua_id}`}
                       >
-                        <Dua dua={dua} />
+                        <Dua
+                          dua={dua}
+                          duaId={`${duaCatView}-${x.subcat_id}-${dua.dua_id}`}
+                        />
                       </div>
                     ))}
                   </div>

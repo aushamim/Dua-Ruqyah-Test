@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import AudioPlayer from "./AudioPlayer";
 
-const Dua = ({ dua }) => {
+const Dua = ({ dua, duaId }) => {
   return (
     <div className="bg-white px-6 py-5 mb-5 rounded-xl">
       <div className="flex items-center gap-4 mb-8">
@@ -59,8 +59,9 @@ const Dua = ({ dua }) => {
       </div>
       <div className="mt-7 grid grid-cols-4 items-center">
         <div className="col-span-3">
-          {dua?.audio ? <AudioPlayer src={dua?.audio} /> : ""}
+          {dua?.audio ? <AudioPlayer src={dua?.audio} duaId={duaId} /> : ""}
         </div>
+
         <div className="flex justify-between">
           <div class="tooltip" data-tip="Copy">
             <button>
