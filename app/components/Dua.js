@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import AudioPlayer from "./AudioPlayer";
+import { toast } from "react-toastify";
 
 const Dua = ({ dua, duaId }) => {
   return (
@@ -64,7 +65,11 @@ const Dua = ({ dua, duaId }) => {
 
         <div className="flex justify-between">
           <div class="tooltip" data-tip="Copy">
-            <button>
+            <button
+              onClick={() => {
+                toast.info("Coming Soon Insha Allah");
+              }}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -83,7 +88,11 @@ const Dua = ({ dua, duaId }) => {
             </button>
           </div>
           <div class="tooltip" data-tip="Bookmark">
-            <button>
+            <button
+              onClick={() => {
+                toast.info("Coming Soon Insha Allah");
+              }}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -102,7 +111,11 @@ const Dua = ({ dua, duaId }) => {
             </button>
           </div>
           <div class="tooltip" data-tip="Memorize">
-            <button>
+            <button
+              onClick={() => {
+                toast.info("Coming Soon Insha Allah");
+              }}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -125,7 +138,11 @@ const Dua = ({ dua, duaId }) => {
             </button>
           </div>
           <div class="tooltip" data-tip="Share">
-            <button>
+            <button
+              onClick={() => {
+                toast.info("Coming Soon Insha Allah");
+              }}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -144,7 +161,11 @@ const Dua = ({ dua, duaId }) => {
             </button>
           </div>
           <div class="tooltip" data-tip="Report">
-            <button>
+            <button
+              onClick={() => {
+                toast.info("Coming Soon Insha Allah");
+              }}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
