@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
 
 import { Bounce, ToastContainer } from "react-toastify";
@@ -7,11 +8,25 @@ import Topbar from "./components/Topbar";
 import Sidebar from "./components/Sidebar";
 import Dua from "./components/Dua";
 import SubCategory from "./components/SubCategory";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 
 export default function Home() {
-  const [duaCatView, setDuaCatView] = useState("0");
+  const [duaCatView, setDuaCatView] = useState(1);
+  const [duaCat, setDuaCat] = useState([]);
+  const [duaAll, setDuaAll] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/category")
+      .then((res) => res.json())
+      .then((data) => setDuaCat(data));
+  }, []);
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/dua/${duaCatView}`)
+      .then((res) => res.json())
+      .then((data) => setDuaAll(data));
+  }, [duaCatView]);
 
   return (
     <div className="overflow-hidden">
@@ -59,59 +74,81 @@ export default function Home() {
 
                 <div className="h-[57vh] 2xl:h-[71vh] overflow-y-scroll scrollbar-light">
                   {/* Category Start */}
-                  <div className="ml-3 mr-2">
-                    <button
-                      className={
-                        duaCatView === "0"
-                          ? "bg-[#e8f0f5] p-3 rounded-xl grid grid-cols-5 gap-2 items-center"
-                          : "bg-white p-3 rounded-xl grid grid-cols-5 gap-2 items-center"
-                      }
-                      onClick={() => {
-                        setDuaCatView("0");
-                      }}
-                    >
-                      <div className="bg-[#f7f8fa] flex items-center justify-center p-2 rounded-lg">
-                        <Image
-                          src="/assets/icons/duar_gurutto.svg"
-                          alt="Logo"
-                          width={100}
-                          height={100}
-                          className="w-9"
-                        />
-                      </div>
-                      <div className="col-span-3">
-                        <p className="font-medium">Dua's Importance</p>
-                        <p className="text-xs mt-1 text-gray-500">
-                          Subcategory: 7
-                        </p>
-                      </div>
-                      <div className="h-full border-l-2 hidden 2xl:block">
-                        <p className="font-medium text-center">21</p>
-                        <p className="text-xs  text-center mt-1 text-gray-500">
-                          Duas
-                        </p>
-                      </div>
-                    </button>
+                  {duaCat?.map((cat) => (
+                    <div key={cat.id} className="ml-3 mr-2">
+                      <button
+                        className={
+                          duaCatView === cat.id
+                            ? "bg-[#e8f0f5] p-3 rounded-xl grid grid-cols-5 gap-2 items-center"
+                            : "bg-white p-3 rounded-xl grid grid-cols-5 gap-2 items-center"
+                        }
+                        onClick={() => {
+                          setDuaCatView(cat.id);
+                        }}
+                      >
+                        <div className="bg-[#f7f8fa] flex items-center justify-center p-2 rounded-lg">
+                          <Image
+                            src={`/assets/icons/${cat.cat_icon}.svg`}
+                            alt="Logo"
+                            width={100}
+                            height={100}
+                            className="w-9"
+                          />
+                        </div>
+                        <div className="col-span-3">
+                          <p className="font-medium text-left">
+                            {cat.cat_name_en}
+                          </p>
+                          <p className="text-xs mt-1 text-gray-500 text-left">
+                            Subcategory: {cat.no_of_subcat}
+                          </p>
+                        </div>
+                        <div className="h-full border-l-2 hidden 2xl:block">
+                          <p className="font-medium text-center">
+                            {cat.no_of_dua}
+                          </p>
+                          <p className="text-xs  text-center mt-1 text-gray-500">
+                            Duas
+                          </p>
+                        </div>
+                      </button>
 
-                    <SubCategory
-                      openState={duaCatView === "0" ? true : false}
-                    />
-                  </div>
+                      <SubCategory
+                        openState={duaCatView === cat.id ? true : false}
+                        catId={cat?.cat_id}
+                      />
+                    </div>
+                  ))}
                   {/* Category End */}
                 </div>
               </div>
 
+              {/* Body Start */}
               <div className="h-[85vh] col-span-3 overflow-y-scroll rounded-xl pr-1">
-                <div className="bg-white px-6 py-4 mb-5 rounded-xl font-medium">
-                  <span className="text-[#1FA45B] font-semibold">
-                    Section:{" "}
-                  </span>
-                  The servant is dependent on his Lord
-                </div>
+                {duaAll?.map((x) => (
+                  <div key={x.id}>
+                    <div
+                      id={`section-${duaCatView}-${x.subcat_id}`}
+                      className="bg-white px-6 py-4 mb-5 rounded-xl font-medium"
+                    >
+                      <span className="text-[#1FA45B] font-semibold">
+                        Section:{" "}
+                      </span>
+                      {x.subcat_name_en}
+                    </div>
 
-                <Dua />
-                <Dua />
+                    {x?.duas.map((dua) => (
+                      <div
+                        key={dua.dua_id}
+                        id={`dua-${duaCatView}-${x.subcat_id}-${dua.dua_id}`}
+                      >
+                        <Dua dua={dua} />
+                      </div>
+                    ))}
+                  </div>
+                ))}
               </div>
+              {/* Body End */}
             </div>
             <div>
               <Sidebar />

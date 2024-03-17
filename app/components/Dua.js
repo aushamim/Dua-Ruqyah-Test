@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-const Dua = () => {
+const Dua = ({ dua }) => {
   return (
     <div className="bg-white px-6 py-5 mb-5 rounded-xl">
       <div className="flex items-center gap-4 mb-8">
@@ -13,46 +13,48 @@ const Dua = () => {
           className="w-9"
         />
         <p className="text-[#1FA45B] font-semibold">
-          2. The servant is dependent on his Lord #2
+          {dua?.dua_id}. {dua?.dua_name_en}
         </p>
       </div>
 
       <div className="text-sm text-justify">
-        <p className="mb-7 leading-8">
-          Prophet (ﷺ) used to say after every compulsory prayer, The servant
-          will ask his Lord for all of his religiously and worldly needs,
-          because the treasure of all things is in the hands of Allah. Allah
-          says (interpretation of the meaning): “And there is not a thing but
-          that with Us are its depositories, and We do not send it down except
-          according to a known measure.” (Sura Al-Hijr 15:21) No one can
-          withhold what Allah gives; And, no one can give what he resists.
-        </p>
-        <p className="mb-7 leading-[2] text-[2.5rem] font-arabic">
-          لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيْكَ لَهُ، لَهُ الْمُلْكُ
-          وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ، اَللَّهُمَّ لَا
-          مَانِعَ لِمَا أَعْطَيْتَ وَلَا مُعْطِيَ لِمَا مَنَعْتَ وَلَا يَنْفَعُ
-          ذَا الْجَدِّ مِنْكَ الْجَدُّ
-        </p>
-        <p className="mb-7 italic leading-8">
-          <span className="font-medium">Transliteration: </span>Laa ilaaha
-          illallahu wahdahu laa sharika lahu, lahul-mulku wa lahul-hamdu wa huwa
-          'alaa kulli shay'in qadir. Allaahumma laa maani'a limaa a'taita wa laa
-          mu'tia limaa mana'ta wa laa yanfa'u dhal-jaddi minka al-jaddu
-        </p>
-        <p className="mb-7">
-          <span className="font-medium">Translation: </span>There is none worthy
-          of worship except Allah alone with no partner or associate. He is the
-          Dominion and to Him be all praise, and He is able to do all things. O
-          Allah, one can withhold what You have given and none can give what You
-          have withheld, and no wealth or fortune can benefit anyone for from
-          You comes all wealth and fortune.
-        </p>
+        {dua?.top_en ? <p className="mb-7 leading-8">{dua?.top_en}</p> : ""}
 
-        <p className="font-medium leading-6">
-          <span className="text-[#1FA45B]">Reference:</span>
-          <br />
-          Bukhari: 6404
-        </p>
+        {dua?.dua_arabic ? (
+          <p className="mb-7 leading-[2] text-[2.5rem] font-arabic text-right">
+            {dua?.dua_arabic}
+          </p>
+        ) : (
+          ""
+        )}
+
+        {dua?.transliteration_en ? (
+          <p className="mb-7 italic leading-8">
+            <span className="font-medium">Transliteration: </span>
+            {dua?.transliteration_en}
+          </p>
+        ) : (
+          ""
+        )}
+
+        {dua?.translation_en ? (
+          <p className="mb-7">
+            <span className="font-medium">Translation: </span>
+            {dua?.translation_en}
+          </p>
+        ) : (
+          ""
+        )}
+
+        {dua?.refference_en ? (
+          <p className="font-medium leading-6">
+            <span className="text-[#1FA45B]">Reference:</span>
+            <br />
+            {dua?.refference_en}
+          </p>
+        ) : (
+          ""
+        )}
       </div>
       <div className="mt-7 grid grid-cols-4 items-center">
         <div className="col-span-3">
