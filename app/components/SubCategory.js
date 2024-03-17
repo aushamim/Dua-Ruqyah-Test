@@ -103,7 +103,7 @@ const SubCategory = ({ openState, catId }) => {
                             : "ml-5 text-[0.8rem] text-left"
                         }
                       >
-                        {y.dua_name_en}
+                        {y?.dua_name_en}
                       </p>
                     </button>
                   </div>
